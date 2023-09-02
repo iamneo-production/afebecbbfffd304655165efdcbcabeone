@@ -64,7 +64,7 @@ const ticTacToe = (element, index) => {
     btns.forEach((btn, i) => {
         btn.addEventListener('click', () => ticTacToe(btn, i));
     });
-    document.querySelector('#reset-button').addEventListener('click', resetGame);
+    document.querySelector('#reset').addEventListener('click', resetGame);
 
     // Your game logic here
 
