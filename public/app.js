@@ -32,7 +32,8 @@ const ticTacToe = (element, index) => {
     for(const condition of conditions){
         const[a,b,c]=condition;
         if(cells[a] && cells[a]===cells[b] && cells[a]===cells[c]){
-            
+            result.textContent='${currentPlayer} wins!';
+            btns.forEach(btn=>)
         }
     }
 
