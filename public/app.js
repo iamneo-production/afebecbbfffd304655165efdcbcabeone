@@ -16,10 +16,10 @@ let conditions = [
 
 // Function to handle player moves
 const ticTacToe = (element, index) => {
-    if(cells[index]===''&& isGameActive()){
+    if(cells[index]===''){
         cells[index]=currentPlayer;
         element.textContent=currentPlayer;
-        if(checkWin(currentPlayer)){
+        /*if(checkWin(currentPlayer)){
             result.textContent=`Player ${currentPlayer} Wins!`;
             disableButtons();
         }
@@ -65,6 +65,7 @@ const ticTacToe = (element, index) => {
         btn.addEventListener('click', () => ticTacToe(btn, i));
     });
     document.querySelector('#reset').addEventListener('click', resetGame);
+    */
 
     // Your game logic here
 
@@ -74,7 +75,7 @@ const ticTacToe = (element, index) => {
     1. Implement the logic to check for winning conditions using the 'conditions' array.
     2. Display a winning message in the 'result' element when a player wins.
     3. Disable all buttons after a win.
-    
+    */
     for(const condition of conditions){
         const[a,b,c]=condition;
         if(cells[a] && cells[a]===cells[b] && cells[a]===cells[c]){
@@ -90,6 +91,8 @@ const ticTacToe = (element, index) => {
     }
     currentPlayer=currentPlayer==='X'?'0':'X';
     result.textContent='Current Player: ${currentPlayer}';
+}
+};
 
     // Your code to update the game state and check for a win
     // ...
@@ -107,7 +110,7 @@ const ticTacToe = (element, index) => {
     1. Implement a new function that resets the game to its initial state.
     2. Ensure the 'cells', 'btns', and 'currentPlayer' variables are reset.
     3. Update the 'result' element to indicate the current player's turn.
-    4. Re-enable all buttons for a new game.
+    4. Re-enable all buttons for a new game.*/
     
 
 // Function to reset the game
@@ -130,4 +133,4 @@ btns.forEach((btn, i) => {
     btn.addEventListener('click', () => ticTacToe(btn, i));
 });
 
-document.querySelector('#reset').addEventListener('click', resetGame); */
+document.querySelector('#reset').addEventListener('click', resetGame); 
