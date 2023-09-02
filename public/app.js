@@ -20,7 +20,18 @@ const ticTacToe = (element, index) => {
         cells[index]=currentPlayer;
         element.textContent=currentPlayer;
     }
-    if()
+    if(checkWin(currentPlayer)){
+        result.textContent='Player ${currentPlayer} Wins!';
+        disableButtons();
+    }
+    else if(isBoardFull()){
+        result.textContent="It's a Draw!";
+        disableButtons();
+    }
+    else{
+        currentPlayer=(currentPlayer==='X')?'0':'X';
+        result.textContent='Player ${currentPlayer}'s R';
+    }
     // Your game logic here
 
     /*
