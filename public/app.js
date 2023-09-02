@@ -16,15 +16,25 @@ let conditions = [
 
 // Function to handle player moves
 const ticTacToe = (element, index) => {
+    if(cells[index]===''){
+        cells[index]=currentPlayer;
+        element.textContent=currentPlayer;
+    }
     // Your game logic here
 
     /*
     **Part 1: Winning Conditions (Add your code here)**
-
+    
     1. Implement the logic to check for winning conditions using the 'conditions' array.
     2. Display a winning message in the 'result' element when a player wins.
     3. Disable all buttons after a win.
     */
+    for(const condition of conditions){
+        const[a,b,c]=condition;
+        if(cells[a] && cells[a]===cells[b] && cells[a]===cells[c]){
+            
+        }
+    }
 
     // Your code to update the game state and check for a win
     // ...
