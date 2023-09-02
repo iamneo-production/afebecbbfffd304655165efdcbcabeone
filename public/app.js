@@ -16,10 +16,11 @@ let conditions = [
 
 // Function to handle player moves
 const ticTacToe = (element, index) => {
-    if(cells[index]===''){
+    if(cells[index]===''&& isGameActive()){
         cells[index]=currentPlayer;
         element.textContent=currentPlayer;
     }
+    if()
     // Your game logic here
 
     /*
