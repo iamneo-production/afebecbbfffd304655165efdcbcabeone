@@ -38,8 +38,45 @@ const ticTacToe = (element, index) => {
         return result.textContent==='';
     };
     const checkWin=(player)=>{
-        for(let condition of conditions){}
-    }
+        for(let condition of conditions){
+            const[a,b,c]=condition;
+            if(cells[a]===player && cells[b]===player && cells[c]===player){
+                return true;
+            }
+
+        }
+        return false;
+    };
+    const isBoardFull=()=>{
+        return cells.every(cell=>cell !=='');
+    };
+    const disableButtons=()=>{
+        btns.forEach(btn=>btn.disabled=true);
+    };
+    // Function to reset the game
+const resetGame = () => {
+    // Reset game state
+    cells = ['', '', '', '', '', '', '', '', ''];
+    currentPlayer = 'X';
+
+    // Clear cell text content
+    btns.forEach(btn => btn.textContent = '');
+
+    // Reset result message
+    result.textContent = `Player ${currentPlayer}'s Turn`;
+
+    // Enable all buttons
+    btns.forEach(btn => btn.disabled = false);
+};
+
+// Add click event listeners to buttons
+btns.forEach((btn, i) => {
+    btn.addEventListener('click', () => ticTacToe(btn, i));
+});
+
+// Add click event listener to reset button
+document.querySelector('#reset').addEventListener('click', resetGame);
+
     // Your game logic here
 
     /*
@@ -73,7 +110,7 @@ const ticTacToe = (element, index) => {
 
     // Your code to handle button and cell interactions
     // ...
-};
+
 
     /*
     **Part 2: Reset Function (Add your code here)**
