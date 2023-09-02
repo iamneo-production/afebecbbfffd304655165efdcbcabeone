@@ -19,18 +19,26 @@ const ticTacToe = (element, index) => {
     if(cells[index]===''&& isGameActive()){
         cells[index]=currentPlayer;
         element.textContent=currentPlayer;
-    }
-    if(checkWin(currentPlayer)){
-        result.textContent='Player ${currentPlayer} Wins!';
-        disableButtons();
-    }
-    else if(isBoardFull()){
-        result.textContent="It's a Draw!";
-        disableButtons();
-    }
-    else{
+        if(checkWin(currentPlayer)){
+            result.textContent='Player ${currentPlayer} Wins!';
+            disableButtons();
+        }
+        else if(isBoardFull()){
+            result.textContent="It's a Draw!";
+            disableButtons();
+        }
+        else{
         currentPlayer=(currentPlayer==='X')?'0':'X';
-        result.textContent='Player ${currentPlayer}'s R';
+        result.textContent="Player ${currentPlayer}'s Turn";
+        }
+    }
+};
+
+    const isGameActive=()=>{
+        return result.textContent==='';
+    };
+    const checkWin=(player)=>{
+        for(let condition of conditions){}
     }
     // Your game logic here
 
