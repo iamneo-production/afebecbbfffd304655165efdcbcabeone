@@ -33,9 +33,17 @@ const ticTacToe = (element, index) => {
         const[a,b,c]=condition;
         if(cells[a] && cells[a]===cells[b] && cells[a]===cells[c]){
             result.textContent='${currentPlayer} wins!';
-            btns.forEach(btn=>)
+            btns.forEach(btn=>btn.disabled=true);
+            return;
         }
     }
+    if(cells.every(cell=>cell !=='')){
+        result.textContent="It's a draw!";
+        return;
+
+    }
+    currentPlayer=currentPlayer==='X'?'0':'X';
+    result.textContent='Current Player: ${currentPlayer}';
 
     // Your code to update the game state and check for a win
     // ...
@@ -59,7 +67,7 @@ const ticTacToe = (element, index) => {
 // Function to reset the game
 const resetGame = () => {
     // Your code to reset the game state
-    // ...
+    cells = ['', '', '', '', '', '', '', '', ''];
 
     // Your code to update the 'result' element
     // ...
