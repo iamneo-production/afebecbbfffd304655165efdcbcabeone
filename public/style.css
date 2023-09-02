@@ -8,14 +8,14 @@ body {
     background-position: center center;
     font-family: "Radio Canada", sans-serif;
   }
-  body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #222;
-}
+} 
 
-#header {
+header {
     text-align: left;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
