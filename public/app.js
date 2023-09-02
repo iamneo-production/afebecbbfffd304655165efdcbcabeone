@@ -54,28 +54,17 @@ const ticTacToe = (element, index) => {
         btns.forEach(btn=>btn.disabled=true);
     };
     // Function to reset the game
-const resetGame = () => {
-    // Reset game state
-    cells = ['', '', '', '', '', '', '', '', ''];
-    currentPlayer = 'X';
-
-    // Clear cell text content
-    btns.forEach(btn => btn.textContent = '');
-
-    // Reset result message
-    result.textContent = `Player ${currentPlayer}'s Turn`;
-
-    // Enable all buttons
-    btns.forEach(btn => btn.disabled = false);
-};
-
-// Add click event listeners to buttons
-btns.forEach((btn, i) => {
-    btn.addEventListener('click', () => ticTacToe(btn, i));
-});
-
-// Add click event listener to reset button
-document.querySelector('#reset').addEventListener('click', resetGame);
+    const resetGame = () => {
+        cells = ['', '', '', '', '', '', '', '', ''];
+        currentPlayer = 'X';
+        btns.forEach(btn => btn.textContent = '');
+        result.textContent = `Player ${currentPlayer}'s Turn`;
+        btns.forEach(btn => btn.disabled = false);
+    };
+    btns.forEach((btn, i) => {
+        btn.addEventListener('click', () => ticTacToe(btn, i));
+    });
+    document.querySelector('#reset').addEventListener('click', resetGame);
 
     // Your game logic here
 
@@ -85,7 +74,7 @@ document.querySelector('#reset').addEventListener('click', resetGame);
     1. Implement the logic to check for winning conditions using the 'conditions' array.
     2. Display a winning message in the 'result' element when a player wins.
     3. Disable all buttons after a win.
-    */
+    
     for(const condition of conditions){
         const[a,b,c]=condition;
         if(cells[a] && cells[a]===cells[b] && cells[a]===cells[c]){
@@ -119,7 +108,7 @@ document.querySelector('#reset').addEventListener('click', resetGame);
     2. Ensure the 'cells', 'btns', and 'currentPlayer' variables are reset.
     3. Update the 'result' element to indicate the current player's turn.
     4. Re-enable all buttons for a new game.
-    */
+    
 
 // Function to reset the game
 const resetGame = () => {
@@ -141,4 +130,4 @@ btns.forEach((btn, i) => {
     btn.addEventListener('click', () => ticTacToe(btn, i));
 });
 
-document.querySelector('#reset').addEventListener('click', resetGame);
+document.querySelector('#reset').addEventListener('click', resetGame); */
