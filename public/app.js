@@ -19,53 +19,6 @@ const ticTacToe = (element, index) => {
     if(cells[index]===''){
         cells[index]=currentPlayer;
         element.textContent=currentPlayer;
-        /*if(checkWin(currentPlayer)){
-            result.textContent=`Player ${currentPlayer} Wins!`;
-            disableButtons();
-        }
-        else if(isBoardFull()){
-            result.textContent="It's a Draw!";
-            disableButtons();
-        }
-        else{
-        currentPlayer=(currentPlayer==='X')?'0':'X';
-        result.textContent=`Player ${currentPlayer}'s Turn`;
-        }
-    }
-};
-
-    const isGameActive=()=>{
-        return result.textContent==='';
-    };
-    const checkWin=(player)=>{
-        for(let condition of conditions){
-            const[a,b,c]=condition;
-            if(cells[a]===player && cells[b]===player && cells[c]===player){
-                return true;
-            }
-
-        }
-        return false;
-    };
-    const isBoardFull=()=>{
-        return cells.every(cell=>cell !=='');
-    };
-    const disableButtons=()=>{
-        btns.forEach(btn=>btn.disabled=true);
-    };
-    // Function to reset the game
-    const resetGame = () => {
-        cells = ['', '', '', '', '', '', '', '', ''];
-        currentPlayer = 'X';
-        btns.forEach(btn => btn.textContent = '');
-        result.textContent = `Player ${currentPlayer}'s Turn`;
-        btns.forEach(btn => btn.disabled = false);
-    };
-    btns.forEach((btn, i) => {
-        btn.addEventListener('click', () => ticTacToe(btn, i));
-    });
-    document.querySelector('#reset').addEventListener('click', resetGame);
-    */
 
     // Your game logic here
 
